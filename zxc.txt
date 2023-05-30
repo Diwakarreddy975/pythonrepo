@@ -5,7 +5,7 @@ beginning of the string "\AThe"
 # being treated as a "raw string") r"\
 # r"ain\
 # \B Returns a match where the specified characters are present,
-# but NOT at the beginning (or at the end) of a word
+# but NOT at the beginning (or at the end) of a 
 # (the "r" in the beginning is making sure that the string is being
 #. treated as a "raw string") r"\Bain r"ain\B"
 # \d Returns a match where the string contains digits (numbers from 0-9) "\d"

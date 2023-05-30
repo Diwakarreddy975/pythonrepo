@@ -14,7 +14,7 @@ beginning of the string "\AThe"
 # \S Returns a match where the string DOES NOT contain a white space character
 # \w Returns a match where the string contains any word characters (characters f
 # digits from 0-9, and the underscore _ character) "\w"
-# \W Returns a match where the string DOES NOT contain any word characters "\W"
+# \W Returns a match where the string DOES ontain any word characters "\W"
 # \Z Returns a match if the specified characters are at the end of the string
 # Set Description Try it
 # [arn] Returns a match where one of the specifieracters (a, r, or n) are p

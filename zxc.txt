@@ -12,7 +12,7 @@ beginning of the string "\AThe"
 # \D Returns a match where the string DOES NOT contain digits "\D"
 # \s Returns a match where the string contains a white space character "\s"
 # \S Returns a match where the string DOES NOT contain a white space character
-# \w Returns a match where the string contains any word characters (characters f
+# \w Returns a match where the string contains any word cracters (characters f
 # digits from 0-9, and the underscore _ character) "\w"
 # \W Returns a match where the string DOES ontain any word characters "\W"
 # \Z Returns a match if the specified characters are at the end of the string

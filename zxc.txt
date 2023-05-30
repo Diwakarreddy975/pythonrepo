@@ -19,4 +19,4 @@ beginning of the string "\AThe"
 # Set Description Try it
 # [arn] Returns a match where one of the specifieracters (a, r, or n) are p
 # [a-n] Returns a match for any lower case character, alphabetically between a a
-# [^arn] Returns a mat any character EXCEPT a,
+# [^arn] changes made in master branch

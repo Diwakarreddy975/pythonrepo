@@ -3,7 +3,7 @@ beginning of the string "\AThe"
 # at the beginning or at the end of a word
 # (the "r" in the beginning is making sure that the string is
 # being treated as a "raw string") r"\
-# r"ain\b"
+# r"ain\
 # \B Returns a match where the specified characters are present,
 # but NOT at the beginning (or at the end) of a word
 # (the "r" in the beginning is making sure that the string is being

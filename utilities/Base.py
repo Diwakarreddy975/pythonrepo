@@ -16,6 +16,10 @@ class Base:
         waits=WebDriverWait(self.driver,time)
         waits.until(EC.visibility_of_element_located(by_locator))
 
+    def wait1(self, by_locator, time, value):
+        waits = WebDriverWait(self.driver, time)
+        waits.until(EC.visibility_of_element_located(by_locator))
+
     def screenshot(self):
         self.driver.save_screenshot("C:\\Users\\91789\\PycharmProjects\\pytestBy_naveen\\Reports\\screenshots\\"+'screenshot'+str(random.randrange(1000))+'.png')
 

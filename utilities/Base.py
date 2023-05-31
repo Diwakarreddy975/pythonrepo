@@ -10,8 +10,9 @@ class Base:
 
     def __init__(self,driver):
         self.driver=driver
+        self.driver = driver
 
-    def wait(self,by_locator,time):
+    def wait(self,by_locator,time,value):
         waits=WebDriverWait(self.driver,time)
         waits.until(EC.visibility_of_element_located(by_locator))
 

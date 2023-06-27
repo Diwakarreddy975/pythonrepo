@@ -5,6 +5,9 @@ from utilities.Base import Base
 from utilities import getconfigure as GF
 from utilities.get_loggers import log001
 
+
+
+@pytest.mark.usefixtures("init_driver")
 class Test_page():
     baseURL = GF.getconfigure("Basic info","url")
     login_page_title = GF.getconfigure("Basic info", "title_of_loginpage")
@@ -16,16 +19,13 @@ class Test_page():
 
 
 
-    def test_validating_login_page_title(self,init_driver):
+    def test_validating_login_page_title(self):
         logger=log001().generate_log()
         logger.info("driver initialised")
-
-        self.driver=init_driver
         assert self.driver.title==self.login_page_title
         logger.info("validation of login page completed")
 
-    def test_validating_login_functionality(self,init_driver):
-        self.driver = init_driver
+    def test_validating_login_functionality(self):
         logger = log001().generate_log()
         logger.info("validation of login functionality with valid credentials started")
         loginPOM=loginpagePOM(self.driver)
@@ -35,8 +35,7 @@ class Test_page():
         assert self.driver.title==self.home_page_title ,"failed to login"
         logger.info("validation of login functionality with valid credentials completed")
 
-    def test_validating_login_Error_message_with_invalid_EmailCredentials_to(self,init_driver):
-        self.driver=init_driver
+    def test_validating_login_Error_message_with_invalid_EmailCredentials_to(self):
         logger = log001().generate_log()
         logger.info("validation of login functionality with invalid email started")
         loginPOM = loginpagePOM(self.driver)
@@ -46,8 +45,7 @@ class Test_page():
         assert loginPOM.get_email_error_text()==GF.getconfigure("data info","Email_error_text")
         logger.info("validation of login functionality with invalid email completed")
 
-    def test_validating_login_Error_message_with_invalid_password(self,init_driver):
-        self.driver=init_driver
+    def test_validating_login_Error_message_with_invalid_password(self):
         logger = log001().generate_log()
         logger.info("validation of login functionality with valid invalid password started")
         loginPOM = loginpagePOM(self.driver)

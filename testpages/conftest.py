@@ -4,14 +4,15 @@ import pytest
 from selenium import webdriver
 from utilities import getconfigure
 
-@pytest.fixture()
-def init_driver(request):
+@pytest.fixture(autouse=True)
+def init_driver(get_option,request):
     global driver
-    browser=getconfigure.getconfigure("Basic info","browser")
-    if browser.__eq__("chrome"):
+    if get_option.__eq__("chrome"):
         driver = webdriver.Chrome()
-    elif browser.__eq__("firefox"):
+    elif get_option.__eq__("firefox"):
         driver = webdriver.Firefox()
+    else:
+        driver = webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(5)
     driver.delete_all_cookies()
@@ -20,11 +21,11 @@ def init_driver(request):
     yield
     driver.quit()
     time.sleep(2)
-# @pytest.fixture()
-# def setup(module):
-#     driver = webdriver.Chrome()
-#     driver.maximize_window()
-#
-# @pytest.fixture()
-# def tear_down(module):
-#     driver.quit()
+
+def pytest_addoption(parser):
+    parser.addoption("--browser")
+
+@pytest.fixture()
+def get_option(request):
+    return request.config.getoption("--browser")
+
